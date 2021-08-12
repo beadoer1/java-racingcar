@@ -13,10 +13,10 @@ public class Distance {
     }
 
     public Distance move() {
-        return new Distance(this.distance + 1);
+        return new Distance(distance + 1);
     }
 
-    public int getDistance() {
+    public int value() {
         return distance;
     }
 

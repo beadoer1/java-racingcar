@@ -30,15 +30,15 @@ public class Car {
     }
 
     public String getName() {
-        return name.getName();
+        return name.value();
     }
 
     public int getDistance() {
-        return distance.getDistance();
+        return distance.value();
     }
 
     public int max(int maxDistance) {
-        return Math.max(maxDistance, this.distance.getDistance());
+        return Math.max(maxDistance, this.distance.value());
     }
 
     @Override

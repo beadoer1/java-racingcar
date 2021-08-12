@@ -7,10 +7,14 @@ public class Name {
     private final String name;
 
     public Name(String name) {
-        if (name == null || name.isEmpty() || name.trim().isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("자동차 이름은 필수 입니다.");
         }
         this.name = name;
+    }
+
+    public String value() {
+        return this.name;
     }
 
     @Override
@@ -24,9 +28,5 @@ public class Name {
     @Override
     public int hashCode() {
         return Objects.hash(name);
-    }
-
-    public String getName() {
-        return this.name;
     }
 }
