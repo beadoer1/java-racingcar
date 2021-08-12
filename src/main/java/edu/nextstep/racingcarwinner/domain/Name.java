@@ -1,16 +1,22 @@
 package edu.nextstep.racingcarwinner.domain;
 
 
+import edu.nextstep.racingcarwinner.exception.NullNameException;
+
 import java.util.Objects;
 
 public class Name {
     private final String name;
 
     public Name(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("자동차 이름은 필수 입니다.");
-        }
+        checkNullAndEmpty(name);
         this.name = name;
+    }
+
+    private void checkNullAndEmpty(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new NullNameException("자동차 이름은 필수 입니다.");
+        }
     }
 
     public String value() {
